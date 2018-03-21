@@ -13,20 +13,40 @@ import AppCenterCrashes
 import AppCenterPush
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, MSCrashesDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, MSPushDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        MSCrashes.setDelegate(self)
+        MSPush.setDelegate(self)
         MSAppCenter.start("664c3640-74c2-4a03-8ff9-16d9e3053333", withServices: [
             MSAnalytics.self,
             MSCrashes.self,
             MSPush.self
             ])
+        
         MSAnalytics.trackEvent("Video clicked", withProperties: ["Category" : "Music", "FileName" : "favorite.avi"])
+        
+        func push(_ push: MSPush!, didReceive pushNotification: MSPushNotification!) {
+            let title: String = pushNotification.title ?? ""
+            var message: String = pushNotification.message ?? ""
+            var customData: String = ""
+            for item in pushNotification.customData {
+                customData =  ((customData.isEmpty) ? "" : "\(customData), ") + "\(item.key): \(item.value)"
+            }
+            if (UIApplication.shared.applicationState == .background) {
+                NSLog("Notification received in background, title: \"\(title)\", message: \"\(message)\", custom data: \"\(customData)\"");
+            } else {
+                message =  message + ((customData.isEmpty) ? "" : "\n\(customData)")
+                
+                let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+                alertController.addAction(UIAlertAction(title: "OK", style: .cancel))
+                
+                // Show the alert controller.
+                self.window?.rootViewController?.present(alertController, animated: true)
+            }
+        }
         return true
     }
 
