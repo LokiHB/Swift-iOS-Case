@@ -13,14 +13,19 @@ import AppCenterCrashes
 import AppCenterPush
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, MSCrashesDelegate {
 
     var window: UIWindow?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        MSAppCenter.start("664c3640-74c2-4a03-8ff9-16d9e3053333", withServices: [MSAnalytics.self, MSCrashes.self, MSPush.self])
+        MSCrashes.setDelegate(self)
+        MSAppCenter.start("664c3640-74c2-4a03-8ff9-16d9e3053333", withServices: [
+            MSAnalytics.self,
+            MSCrashes.self,
+            MSPush.self
+            ])
         MSAnalytics.trackEvent("Video clicked", withProperties: ["Category" : "Music", "FileName" : "favorite.avi"])
         return true
     }

@@ -57,6 +57,7 @@
 		4A01F296206110B80068D48C /* Swift-iOS-binUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Swift-iOS-binUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A01F29A206110B80068D48C /* Swift_iOS_binUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swift_iOS_binUITests.swift; sourceTree = "<group>"; };
 		4A01F29C206110B80068D48C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4A3553FD206253B30049E902 /* Swift-iOS-bin.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Swift-iOS-bin.entitlements"; sourceTree = "<group>"; };
 		CAE680CA369CD85ED34DFE7B /* Pods-Swift-iOS-binUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift-iOS-binUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Swift-iOS-binUITests/Pods-Swift-iOS-binUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		DF68B704B1DC38587A75B3EB /* Pods-Swift-iOS-binUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift-iOS-binUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Swift-iOS-binUITests/Pods-Swift-iOS-binUITests.release.xcconfig"; sourceTree = "<group>"; };
 		EAF85307D1DC2A4D895C24FF /* Pods_Swift_iOS_bin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Swift_iOS_bin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -116,6 +117,7 @@
 		4A01F277206110B80068D48C /* Swift-iOS-bin */ = {
 			isa = PBXGroup;
 			children = (
+				4A3553FD206253B30049E902 /* Swift-iOS-bin.entitlements */,
 				4A01F278206110B80068D48C /* AppDelegate.swift */,
 				4A01F27A206110B80068D48C /* FirstViewController.swift */,
 				4A01F27C206110B80068D48C /* SecondViewController.swift */,
@@ -246,6 +248,17 @@
 					4A01F274206110B80068D48C = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.NetworkExtensions.iOS = {
+								enabled = 0;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					4A01F28A206110B80068D48C = {
 						CreatedOnToolsVersion = 9.2;
@@ -627,6 +640,7 @@
 			baseConfigurationReference = 121B0109DC81B54E4FADE2E3 /* Pods-Swift-iOS-bin.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Swift-iOS-bin/Swift-iOS-bin.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3D27XEAVGH;
 				INFOPLIST_FILE = "Swift-iOS-bin/Info.plist";
@@ -643,6 +657,7 @@
 			baseConfigurationReference = 212AE65AB56B6B211BE1FE41 /* Pods-Swift-iOS-bin.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Swift-iOS-bin/Swift-iOS-bin.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3D27XEAVGH;
 				INFOPLIST_FILE = "Swift-iOS-bin/Info.plist";

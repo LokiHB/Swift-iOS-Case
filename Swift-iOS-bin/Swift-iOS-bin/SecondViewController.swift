@@ -14,9 +14,8 @@ import AppCenterCrashes
 class SecondViewController: UIViewController {
 
     override func viewDidLoad() {
-        MSCrashes.generateTestCrash()
         super.viewDidLoad()
-        
+        MSCrashes.generateTestCrash()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
