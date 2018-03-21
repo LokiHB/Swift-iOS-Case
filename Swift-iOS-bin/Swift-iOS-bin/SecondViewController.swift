@@ -14,13 +14,14 @@ import AppCenterCrashes
 class SecondViewController: UIViewController {
 
     override func viewDidLoad() {
+        MSCrashes.generateTestCrash()
         super.viewDidLoad()
         
         // Do any additional setup after loading the view, typically from a nib.
     }
 
     override func didReceiveMemoryWarning() {
-        MSCrashes.generateTestCrash()
+        
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
