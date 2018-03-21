@@ -3,11 +3,23 @@
 <plist version="1.0">
 <dict>
 	<key>SchemeUserState</key>
+	<dict/>
+	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>Swift-iOS-bin.xcscheme</key>
+		<key>4A01F274206110B80068D48C</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>4</integer>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4A01F28A206110B80068D48C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4A01F295206110B80068D48C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>
