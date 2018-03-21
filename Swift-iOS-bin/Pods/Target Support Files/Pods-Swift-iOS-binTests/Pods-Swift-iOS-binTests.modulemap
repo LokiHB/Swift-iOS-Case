@@ -1,0 +1,6 @@
+framework module Pods_Swift_iOS_binTests {
+  umbrella header "Pods-Swift-iOS-binTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

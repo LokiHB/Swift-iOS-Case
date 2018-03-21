@@ -1,0 +1,23 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'Swift-iOS-bin' do
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+pod 'AppCenter'
+pod 'AppCenter/Analytics'
+pod 'AppCenter/Crashes'
+
+end
+
+  # Pods for Swift-iOS-bin
+
+  target 'Swift-iOS-binTests' do
+ 
+  end
+
+  target 'Swift-iOS-binUITests' do
+
+  end
+
+
